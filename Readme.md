@@ -2,16 +2,22 @@
 
 This project is an object-oriented JavaScript application that displays interactive maps with location markers and popups. The application uses OpenLayers for map rendering and OpenStreetMap's Nominatim service for geocoding.
 
+![Map Screenshot](screenshots/image.png)
+
 ## Class Structure
 
 ### 1. LocationService
+
 A static utility class that handles location data retrieval.
+
 - **Methods**:
   - `getLocationData(searchQuery)`: Fetches location data based on search query
   - `getLocationDataByCoordinates(coordinates)`: Fetches location data based on coordinates
 
 ### 2. MapMarker
+
 Handles the creation and styling of map markers.
+
 - **Properties**:
   - `feature`: OpenLayers feature for the marker
 - **Methods**:
@@ -19,7 +25,11 @@ Handles the creation and styling of map markers.
   - `getFeature()`: Returns the marker feature
 
 ### 3. PopupOverlay
+
 Manages the popup overlays that appear when clicking markers.
+
+![Popup Overlay Screenshot](screenshots/image2.png)
+
 - **Properties**:
   - `overlay`: OpenLayers overlay instance
 - **Methods**:
@@ -31,7 +41,9 @@ Manages the popup overlays that appear when clicking markers.
   - `setPopupContent(content, element)`: Sets the popup's HTML content
 
 ### 4. MapManager
+
 Manages a single-location map instance.
+
 - **Properties**:
   - `targetElement`: DOM element for map rendering
   - `map`: OpenLayers map instance
@@ -47,7 +59,9 @@ Manages a single-location map instance.
   - `handlePointerMove(e)`: Handles pointer movement events
 
 ### 5. MultiCityMapManager
+
 Extends map functionality to handle multiple cities.
+
 - **Properties**:
   - `targetElement`: DOM element for map rendering
   - `map`: OpenLayers map instance
@@ -63,6 +77,7 @@ Extends map functionality to handle multiple cities.
   - `handlePointerMove(e)`: Handles pointer movement events
 
 ## Class Relationships
+
 - `MultiCityMapManager` and `MapManager` are the main controller classes
 - Both managers use `LocationService` for data fetching
 - Both managers create instances of `MapMarker` for each location
@@ -96,5 +111,3 @@ multiCityMapManager.initialize(cities);
 
 - OpenLayers (ol)
 - OpenStreetMap's Nominatim service
-
-
